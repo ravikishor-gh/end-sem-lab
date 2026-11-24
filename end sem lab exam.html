@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Register</h2>
+<input id="email" placeholder="Email">
+<input id="pass" placeholder="Password">
+<button onclick="register()">Register</button>
+
+<h2>Login</h2>
+<input id="le" placeholder="Email">
+<input id="lp" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<p id="msg"></p>
+
+<script>
+
+function register() {
+    localStorage.setItem("email", email.value);
+    localStorage.setItem("password", pass.value);
+    alert("Registered Successfully");
+}
+
+function login() {
+    if (le.value == localStorage.getItem("email") &&
+        lp.value == localStorage.getItem("password")) {
+        msg.innerHTML = "Login Successful";
+    } else {
+        msg.innerHTML = "Invalid Email or Password";
+    }
+}
+
+</script>
+</body>
+</html>
